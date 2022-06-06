@@ -1,3 +1,5 @@
+import { environment } from './../../environments/environment.prod';
+import { AuthService } from './../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  nome = environment.nome
+  id = environment.id
 
-  ngOnInit(): void {
+  constructor(public auth: AuthService) { }
+
+  ngOnInit() {
   }
 
 }
