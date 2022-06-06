@@ -1,0 +1,52 @@
+h1{
+    font-weight: 500;
+}
+
+.card-header{
+    font-weight: 700;
+    background-color: #2C74C9;
+}
+
+.img-card{
+    height: 205px;
+    width: 600px;
+} 
+
+.btnControl{
+    
+    margin-top: 570px;
+    height: 40px;
+    width: 40px;
+    background-color: #2C74C9 !important;
+}
+
+.card-footer{
+    background-color: #fff;
+}
+
+.input-group-sm>.custom-select, .input-group-sm>.form-control:not(textarea){
+    height: 45px !important; 
+}
+
+.btn1{
+    height: 45px;
+    width: 35%;
+    border: none;
+    outline: none;
+    background-color: #2C74C9;
+    color: white;
+    font-weight: 700;
+    border-radius: 60px;
+}
+
+.btn1:hover{
+    background-color: #235c9d;
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px -1px 25px -4px rgba(0,0,0,0.75);
+transition: 0.5s;
+}
