@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ProdutosComponent,
     MenuComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
