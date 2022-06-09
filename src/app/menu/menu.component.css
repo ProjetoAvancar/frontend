@@ -1,0 +1,43 @@
+.bg-nav-color {
+  background-color: #2C74C9;
+}
+
+.bg-navb-color {
+  background-color: #1E5BA3;
+}
+
+.tm-logo {
+  width: 193px;
+  height: 72px;
+}
+
+.tm-busca {
+  width: 600px;
+}
+
+.tm-cart {
+  width: 50px;
+  height: 50px;
+}
+
+.tm-search {
+  width: 35px;
+  height: 35px;
+}
+
+.fs-14 {
+  font-size: 14pt;
+}
+
+.inp-icon {
+  position: relative;
+}
+
+.inp-icon button {
+  position: absolute;
+  left: 535px;
+}
+
+input + span {
+  position: absolute;
+}
