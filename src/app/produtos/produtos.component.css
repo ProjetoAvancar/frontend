@@ -12,11 +12,6 @@ h1{
     height: 50px;
 }
 
-.img-card{
-    height: 100%;
-    width: 100%;
-} 
-
 .card-body{
     padding: 0px !important;
 }
