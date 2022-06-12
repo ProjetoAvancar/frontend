@@ -14,6 +14,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
+import { BuscaProdutoComponent } from './busca-produto/busca-produto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     CadastrarComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    BuscaProdutoComponent
   ],
   imports: [
     BrowserModule,

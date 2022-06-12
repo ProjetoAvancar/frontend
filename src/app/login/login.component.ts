@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
         environment.nome = this.userLogin.nome;
         environment.id = this.userLogin.id;
 
-        this.router.navigate(['/home']);
+        localStorage.setItem('nome', this.userLogin.nome)
+
+        this.router.navigate(['/produtos']);
       },
       error: (erro) => {
         if (erro.status == 401) {
