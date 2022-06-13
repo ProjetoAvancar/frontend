@@ -10,7 +10,8 @@
       <li class="nav-item align-items-center">
         <form class="form-inline my-2 my-lg-0 inp-icon">
           <input class="form-control mr-sm-2 tm-busca" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-          <button class="btn" type="submit"><img class="tm-search" src="../../assets/img/search_icon.png" alt="ícone de pesquisa"></button>
+          <button class="btn" type="submit"><img class="tm-search" src="../../assets/img/search_icon.png"
+              alt="ícone de pesquisa"></button>
         </form>
       </li>
     </ul>
@@ -24,8 +25,8 @@
           <p *ngIf="auth.logado()" class="mt-3">Olá, {{id}} {{nome}}</p>
         </li>
         <li class="nav-item mr-sm-2">
-          <a class="nav-link text-light p-0" href="#"><img class="tm-cart" src="../../assets/img/shoppcart.png"
-              alt="ícone do carrinho de compras"></a>
+          <a (click)="carrinho()" class="nav-link text-light p-0" type="button"><img class="tm-cart"
+              src="../../assets/img/shoppcart.png" alt="ícone do carrinho de compras"></a>
         </li>
       </ul>
     </span>
@@ -44,4 +45,3 @@
     <div class="col-3"></div>
   </div>
 </div>
-
