@@ -15,6 +15,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
     CadastrarComponent,
     CarouselComponent,
     FooterComponent,
-    TelaProdutoComponent
+    TelaProdutoComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
   ],
   imports: [
     BrowserModule,
