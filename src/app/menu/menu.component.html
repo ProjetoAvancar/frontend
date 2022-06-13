@@ -1,73 +1,76 @@
 <!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-nav-color">
-  <a class="navbar-brand ml-5" href="#"><img class="tm-logo"
-      src="../../assets/img/logo.png" alt="Logo Avançar"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
-    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div *ngIf="isHeader">
+  <nav class="navbar navbar-expand-lg navbar-light bg-nav-color">
+    <a class="navbar-brand ml-5" href="#"><img class="tm-logo"
+        src="../../assets/img/logo.png" alt="Logo Avançar"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav m-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
 
-      <form class="form-inline my-2 my-lg-0">
-        <input [(ngModel)]="nomeProduto" class="form-control tm-busca"
-          name="nomeProduto" type="search" placeholder="Busque um produto"
-          aria-label="Pesquisar">
-        <button [routerLink]="['busca-produto', nomeProduto]" class="btn"
-          type="submit"><i class="fa fa-search text-light"
-            aria-hidden="true"></i></button>
-      </form>
+        <form class="form-inline my-2 my-lg-0">
+          <input [(ngModel)]="nomeProduto" class="form-control tm-busca"
+            name="nomeProduto" type="search" placeholder="Busque um produto"
+            aria-label="Pesquisar">
+          <button [routerLink]="['busca-produto', nomeProduto]" class="btn"
+            type="submit"><i class="fa fa-search text-light"
+              aria-hidden="true"></i></button>
+        </form>
 
-    </ul>
-    <span class="navbar-text text-light">
-      <ul class="navbar-nav mr-auto d-flex align-items-center">
-        <li *ngIf="auth.logado() == false" class="nav-item">
-          <a class="nav-link text-light mr-2" routerLink="/login">Entrar</a>
-        </li>
-        <li class="nav-item">
-          <a *ngIf="auth.logado() == false" class="nav-link text-light mr-3"
-            routerLink="/cadastro">Cadastre-se</a>
-        </li>
-
-        <li class="nav-item dropdown" *ngIf="auth.logado()">
-          <a class="nav-link dropdown-toggle text-light" href="#"
-            id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Olá, {{nomeUser}}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Editar perfil</a>
-            <a class="dropdown-item" href="#">Cadastrar produto</a>
-            <a class="dropdown-item" href="#">Cadastrar categoria</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-danger" href="#"
-              (click)="sair()">Sair</a>
-          </div>
-        </li>
-
-        <li class="nav-item mr-sm-2">
-          <a class="nav-link text-light p-0" href="#"><img class="tm-cart"
-              src="../../assets/img/shoppcart.png"
-              alt="ícone do carrinho de compras"></a>
-        </li>
       </ul>
-    </span>
-  </div>
-</nav>
-<!-- /NavBar -->
+      <span class="navbar-text text-light">
+        <ul class="navbar-nav mr-auto d-flex align-items-center">
+          <li *ngIf="auth.logado() == false" class="nav-item">
+            <a class="nav-link text-light mr-2" routerLink="/login">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="auth.logado() == false" class="nav-link text-light mr-3"
+              routerLink="/cadastro">Cadastre-se</a>
+          </li>
 
-<div class="container-fluid">
-  <div class="row bg-navb-color">
-    <div class="col-3"></div>
-    <div class="col-6 text-center mt-1 mb-1">
-      <a class="text-light mr-5" href="">Informática</a>
-      <a class="text-light mr-5" href="">Eletroeletrônicos</a>
-      <a class="text-light mr-5" href="">Games</a>
-      <a class="text-light mr-5" href="">Ferramentas</a>
-      <a class="text-light" href="">Eletrodomésticos</a>
+          <li class="nav-item dropdown" *ngIf="auth.logado()">
+            <a class="nav-link dropdown-toggle text-light" href="#"
+              id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Olá, {{nome}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Editar perfil</a>
+              <a *ngIf="tipo == 'adm'" class="dropdown-item" href="#">Cadastrar produto</a>
+              <a *ngIf="tipo == 'adm'" class="dropdown-item" routerLink="/categoria">Cadastrar categoria</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" href="#"
+                (click)="sair()">Sair</a>
+            </div>
+          </li>
+
+          <li class="nav-item mr-sm-2">
+            <a class="nav-link text-light p-0" href="#"><img class="tm-cart"
+                src="../../assets/img/shoppcart.png"
+                alt="ícone do carrinho de compras"></a>
+          </li>
+        </ul>
+      </span>
     </div>
-    <div class="col-3"></div>
+  </nav>
+  <!-- /NavBar -->
+
+  <div class="container-fluid">
+    <div class="row bg-navb-color">
+      <div class="col-3"></div>
+      <div class="col-6 text-center mt-1 mb-1">
+        <a class="text-light mr-5" href="">Informática</a>
+        <a class="text-light mr-5" href="">Eletroeletrônicos</a>
+        <a class="text-light mr-5" href="">Games</a>
+        <a class="text-light mr-5" href="">Ferramentas</a>
+        <a class="text-light" href="">Eletrodomésticos</a>
+      </div>
+      <div class="col-3"></div>
+    </div>
   </div>
 </div>
