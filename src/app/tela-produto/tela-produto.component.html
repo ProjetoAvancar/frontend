@@ -8,25 +8,15 @@
                     <div class="card text-center" with="185px" height="350px">
 
                         <div class="card-body">
-                            <h5 class="card-title text-center mt-5">Geladeira Electrolux Top Freezer Frost Free
-                                Efficient
-                                Black Inox Look com Autosense (IF56B)</h5>
+                            <h5 class="card-title text-center mt-5">{{produto.nome}}</h5>
 
-                            <img src="https://electrolux.vteximg.com.br/arquivos/ids/211050-1000-1000/Refrigerator_IF56B_Electrolux_Portuguese_Principal.png?v=637638813232570000"
-                                class="text-center" with="185px" height="350px" alt="">
-                            <p class="justify">Esse lindo Refrigerador, torna sua cozinha funcional e elegante. Prático
-                                e moderno possui selo procel, ou seja, é mais econômico, colabora com o meio ambiente e
-                                com o seu bolso. Além disso, você desfruta de diversas funções inteligentes que otimizam
-                                seu tempo.</p>
-                            <ul class="list-group list-group-flush">
-                                <p class="tex-center colorYellow mb-0">★★★★★</p>
-                                <p class="color">5/5</p>
-                                <li class="list-group-item"><b>Ficha técnica:</b></li>
-                                <li class="list-group-item">Largura 70 cm</li>
-                                <li class="list-group-item">Altura 189 cm</li>
-                                <li class="list-group-item">Profundidade 76 cm</li>
-                            </ul>
-
+                            <img src="{{produto.foto}}" class="text-center" with="185px" height="350px" alt="">
+                            
+                            <div><img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt=""></div>
+                            
+                            <p class="justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum commodi
+                                et voluptates officia distinctio rerum illo tempora consequuntur culpa! Dolore impedit
+                                mollitia voluptatum magni, odio quam atque illum doloribus. Placeat!</p>
                         </div>
                     </div>
                 </div>
@@ -42,15 +32,17 @@
 
                             <div class="card-body">
                                 <div>
-                                    <h4 class="text-center mt-5" id="colorRed"><s>R$ 3.021,00</s></h4>
-                                    <h5 class="text-center" id="fontmax"><b>R$ 3.000,00</b></h5>
+                                    <h4 class="text-center mt-5" id="colorRed"><s>{{produto.desconto | currency :
+                                            'BRL'}}</s></h4>
+                                    <h5 class="text-center" id="fontmax"><b>{{produto.valor | currency : 'BRL'}}</b>
+                                    </h5>
 
                                     <div>
                                         <img src="https://cdn-icons.flaticon.com/png/512/5645/premium/5645197.png?token=exp=1654801346~hmac=23b14d12771a730287d60d0f447d88b1"
                                             with="25px" height="25px" alt="">
                                         <label class="ml-3">⠀à vista no cartão de crédito</label>
                                     </div>
-                                    <p>R$ 3.199,99 em até 8x de R$ 399,99</p>
+                                    <p>{{produto.desconto + 129 | currency : 'BRL'}} em até 8x no cartão</p>
 
 
                                 </div>
@@ -65,11 +57,11 @@
 
                                 <div>
                                     <button class="btn btn mt-5 mb-5 colorWhite" id="button"> <img
-                                            src="https://i.imgur.com/Bbk1cjw.png"
-                                            with="25px" height="25px" alt="ícone de carrinho de compras"> <b>⠀COMPRAR</b></button>
-                                            <p>
-                                                <a href="">Voltar para página inicial</a>
-                                            </p>
+                                            src="https://i.imgur.com/Bbk1cjw.png" with="25px" height="25px"
+                                            alt="ícone de carrinho de compras"> <b>⠀COMPRAR</b></button>
+                                    <p>
+                                        <a href="">Voltar para página inicial</a>
+                                    </p>
                                     <br>
                                     <small class="mt-5 fontmini">Esse produto é vendido e entregue por <b>Avançar</b>.
                                         Todo valor arrecadado com as compras é revertido para ONG's
@@ -89,4 +81,4 @@
         </div>
 
     </div>
-      </body>
+</body>

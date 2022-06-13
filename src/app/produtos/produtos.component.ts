@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
 
@@ -11,6 +12,7 @@ export class ProdutosComponent implements OnInit {
   listaProdutos: Produto[]
   constructor(
     private produtoService: ProdutoService
+    
   ) { }
 
   ngOnInit(){

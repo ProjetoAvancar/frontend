@@ -9,19 +9,21 @@
   <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
       <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 1">
-        <div class="card-body">
-          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-        </div>
-
-        <div class="card-footer">
-          <h6>{{item.nome}}</h6>
-
-          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-          <s>
-            <p>{{item.desconto | currency : 'BRL'}}</p>
-          </s>
-          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-        </div>
+        <a [routerLink]="['/tela-produto', item.id]" class="btn">
+          <div class="card-body">
+            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+          </div>
+  
+          <div class="card-footer">
+            <h6>{{item.nome}}</h6>
+  
+            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+            <s>
+              <p>{{item.desconto | currency : 'BRL'}}</p>
+            </s>
+            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -38,19 +40,21 @@
   <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
       <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 2">
-        <div class="card-body">
-          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-        </div>
-
-        <div class="card-footer">
-          <h6>{{item.nome}}</h6>
-          
-          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-          <s>
-            <p>{{item.desconto | currency : 'BRL'}}</p>
-          </s>
-          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-        </div>
+        <a [routerLink]="['/tela-produto', item.id]" class="btn">
+          <div class="card-body">
+            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+          </div>
+  
+          <div class="card-footer">
+            <h6>{{item.nome}}</h6>
+  
+            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+            <s>
+              <p>{{item.desconto | currency : 'BRL'}}</p>
+            </s>
+            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -67,19 +71,21 @@
   <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
       <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 3">
-        <div class="card-body">
-          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-        </div>
-
-        <div class="card-footer">
-          <h6>{{item.nome}}</h6>
-          
-          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-          <s>
-            <p>{{item.desconto | currency : 'BRL'}}</p>
-          </s>
-          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-        </div>
+        <a [routerLink]="['/tela-produto', item.id]" class="btn">
+          <div class="card-body">
+            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+          </div>
+  
+          <div class="card-footer">
+            <h6>{{item.nome}}</h6>
+  
+            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+            <s>
+              <p>{{item.desconto | currency : 'BRL'}}</p>
+            </s>
+            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -96,19 +102,21 @@
   <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
       <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 4">
-        <div class="card-body">
-          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-        </div>
-
-        <div class="card-footer">
-          <h6>{{item.nome}}</h6>
-          
-          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-          <s>
-            <p>{{item.desconto | currency : 'BRL'}}</p>
-          </s>
-          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-        </div>
+        <a [routerLink]="['/tela-produto', item.id]" class="btn">
+          <div class="card-body">
+            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+          </div>
+  
+          <div class="card-footer">
+            <h6>{{item.nome}}</h6>
+  
+            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+            <s>
+              <p>{{item.desconto | currency : 'BRL'}}</p>
+            </s>
+            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -125,19 +133,21 @@
   <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
       <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 5">
-        <div class="card-body">
-          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-        </div>
-
-        <div class="card-footer">
-          <h6>{{item.nome}}</h6>
-          
-          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-          <s>
-            <p>{{item.desconto | currency : 'BRL'}}</p>
-          </s>
-          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-        </div>
+        <a [routerLink]="['/tela-produto', item.id]" class="btn">
+          <div class="card-body">
+            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+          </div>
+  
+          <div class="card-footer">
+            <h6>{{item.nome}}</h6>
+  
+            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+            <s>
+              <p>{{item.desconto | currency : 'BRL'}}</p>
+            </s>
+            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
