@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -21,7 +23,10 @@ const routes: Routes = [
   { path:'edit-categoria/:id', component: CategoriaEditComponent, data: {isHeader: true} },
   { path:'delete-categoria/:id', component: CategoriaDeleteComponent, data: {isHeader: true} },
 
-  { path:'cadastrar-produto', component: CadastrarProdutoComponent, data: {isHeader: true} }
+  { path:'cadastrar-produto', component: CadastrarProdutoComponent, data: {isHeader: true} },
+
+  {path: 'produto-edit/:id', component: ProdutoEditComponent, data: {isHeader: true}}, /*rota pra editar produto*/
+  {path: 'produto-delete/:id', component: ProdutoDeleteComponent, data: {isHeader: true}} /*rota pra deletar produto*/
 ];
 
 @NgModule({

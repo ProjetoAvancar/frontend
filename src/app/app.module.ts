@@ -19,6 +19,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
     CategoriaComponent,
     CategoriaEditComponent,
     CategoriaDeleteComponent,
-    CadastrarProdutoComponent
+    CadastrarProdutoComponent,
+    TelaProdutoComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
