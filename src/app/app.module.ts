@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,12 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
+
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -33,7 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule
   ],
   providers: [{
-    provide: LocationStrategy,
+    provide: LOCALE_ID, useValue: 'pt',
     useClass: HashLocationStrategy
   }],
   bootstrap: [AppComponent]
