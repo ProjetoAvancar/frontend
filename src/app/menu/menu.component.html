@@ -41,7 +41,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Editar perfil</a>
-              <a *ngIf="tipo == 'adm'" class="dropdown-item" href="#">Cadastrar produto</a>
+              <a *ngIf="tipo == 'adm'" class="dropdown-item" routerLink="/cadastrar-produto">Cadastrar produto</a>
               <a *ngIf="tipo == 'adm'" class="dropdown-item" routerLink="/categoria">Cadastrar categoria</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger" href="#"
