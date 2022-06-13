@@ -20,13 +20,12 @@ export class CategoriaComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    // if (environment.token == '' || environment.tipo != 'adm') {
-    //   alert('Você não possui autorização!');
-    //   this.router.navigate(['/produtos']);
-    // } else {
-    //   this.findAllCategoria()
-    // }
-    this.findAllCategoria()
+    if (environment.token == '' || environment.tipo != 'adm') {
+      alert('Você não possui autorização!');
+      this.router.navigate(['/produtos']);
+    } else {
+      this.findAllCategoria()
+    }
   }
 
   findAllCategoria() {
