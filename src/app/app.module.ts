@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +16,13 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
 
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+
+
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +33,8 @@ import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
     CadastrarComponent,
     CarouselComponent,
     FooterComponent,
-    TelaProdutoComponent
+    TelaProdutoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,7 @@ import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
     FormsModule
   ],
   providers: [{
-    provide: LocationStrategy,
+    provide: LOCALE_ID, useValue: 'pt',
     useClass: HashLocationStrategy
   }],
   bootstrap: [AppComponent]
