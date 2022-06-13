@@ -1,29 +1,144 @@
 <section class="produto ml-5 mr-5">
-    <div class="container py-5">
-      <div class="row py-5 ">
-        <div id="informatica" class="col-lg-5 m-auto text-center">
-          <h1>Informática</h1>
+  <div class="container py-5">
+    <div class="row py-5 ">
+      <div id="informatica" class="col-lg-5 m-auto text-center">
+        <h1>Informática</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+      <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 1">
+        <div class="card-body">
+          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+        </div>
+
+        <div class="card-footer">
+          <h6>{{item.nome}}</h6>
+
+          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+          <s>
+            <p>{{item.desconto | currency : 'BRL'}}</p>
+          </s>
+          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-body">
-            <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
-          </div>
-  
-          <div class="card-footer">
-            <h6>{{item.nome}}</h6>
-            <h6>{{item.categoria}}</h6>
-              
-            <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
-            <s>
-              <p>{{item.desconto | currency : 'BRL'}}</p>
-            </s>
-            <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
-          </div>
+  </div>
+</section>
+
+<section class="produto ml-5 mr-5">
+  <div class="container py-5">
+    <div class="row py-5 ">
+      <div id="eletronicos" class="col-lg-5 m-auto text-center">
+        <h1>Eletrônicos</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+      <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 2">
+        <div class="card-body">
+          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+        </div>
+
+        <div class="card-footer">
+          <h6>{{item.nome}}</h6>
+          
+          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+          <s>
+            <p>{{item.desconto | currency : 'BRL'}}</p>
+          </s>
+          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="produto ml-5 mr-5">
+  <div class="container py-5">
+    <div class="row py-5 ">
+      <div id="games" class="col-lg-5 m-auto text-center">
+        <h1>Games</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+      <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 3">
+        <div class="card-body">
+          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+        </div>
+
+        <div class="card-footer">
+          <h6>{{item.nome}}</h6>
+          
+          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+          <s>
+            <p>{{item.desconto | currency : 'BRL'}}</p>
+          </s>
+          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="produto ml-5 mr-5">
+  <div class="container py-5">
+    <div class="row py-5 ">
+      <div id="perifericos" class="col-lg-5 m-auto text-center">
+        <h1>Periféricos</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+      <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 4">
+        <div class="card-body">
+          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+        </div>
+
+        <div class="card-footer">
+          <h6>{{item.nome}}</h6>
+          
+          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+          <s>
+            <p>{{item.desconto | currency : 'BRL'}}</p>
+          </s>
+          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="produto ml-5 mr-5">
+  <div class="container py-5">
+    <div class="row py-5 ">
+      <div id="eletrodomesticos" class="col-lg-5 m-auto text-center">
+        <h1>Eletrodomésticos</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+      <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 5">
+        <div class="card-body">
+          <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.foto}}" alt="not found"></a>
+        </div>
+
+        <div class="card-footer">
+          <h6>{{item.nome}}</h6>
+          
+          <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+          <s>
+            <p>{{item.desconto | currency : 'BRL'}}</p>
+          </s>
+          <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

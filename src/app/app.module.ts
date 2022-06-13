@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { HomeComponent } from './home/home.component';
 
 
 registerLocaleData(ptBr);
@@ -30,7 +31,8 @@ registerLocaleData(ptBr);
     LoginComponent,
     CadastrarComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
