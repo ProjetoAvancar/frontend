@@ -55,6 +55,9 @@
   .color {
     color:rgb(0, 0, 0)
   }
+  .colorWhite{
+    color: rgb(255, 255, 255);
+  }
   
   #ml {
       float:left;
