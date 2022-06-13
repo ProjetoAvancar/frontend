@@ -22,5 +22,4 @@ export class ProdutosComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
-
 }
