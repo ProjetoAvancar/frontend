@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProdutoService } from './../service/produto.service';
 import { Produto } from './../model/Produto';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,10 @@ export class CarrinhoComponent implements OnInit {
   listaProdutos: Array<Produto> = []
   soma = 0
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(
+    private produtoService: ProdutoService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.carrinhoCompleto()
@@ -34,6 +38,20 @@ export class CarrinhoComponent implements OnInit {
         let id = this.carrinho[item]
         this.findProdutoById(id)
       }
+    }
+  }
+
+  finalizarCompra() {
+    if(environment.token == '') {
+      alert('Você precisa estar logado!')
+      this.router.navigate(['/login'])
+    } else if(this.listaProdutos.length > 0) {
+      alert('Muito obrigado pela compra!')
+      this.listaProdutos = []
+      environment.carrinho = [0]
+      this.router.navigate(['/home'])
+    } else {
+      alert('Seu carrinho está vazio!')
     }
   }
 
