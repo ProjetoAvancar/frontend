@@ -26,11 +26,11 @@ export class CategoriaService {
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categorias', categoria)
+    return this.http.post<Categoria>('http://localhost:8080/categorias/cadastrar', categoria)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('http://localhost:8080/categorias', categoria)
+    return this.http.put<Categoria>('http://localhost:8080/categorias/atualizar', categoria)
   }
 
   deleteCategoria(id: number){

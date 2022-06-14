@@ -1,0 +1,48 @@
+<div class="container mb-5 mt-5">
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" role="tab"
+            aria-controls="home" aria-selected="true"><b>Excluir
+              produtos</b></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h5 class="text-center text-secondary">Você tem certeza que deseja apagar
+        esse produto?</h5>
+    </div>
+  </div>
+
+
+
+  <div class="row d-flex justify-content-center mt-4">
+    <div class="col-md-4">
+
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title m-0">{{produto.nome}}</h5>
+          <p class="card-text mt-3"><img src="{{produto.foto}}" alt="Imagem do produto"></p>
+          <p class="card-text mt-3">{{produto.descricao}}</p>
+          <p class="card-text mt3">{{produto.valor}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <button class="btn btn-danger mr-4" routerLink="/cadastrar-produto">Não</button>
+      <button (click)="apagar()" class="btn btn-info">Sim</button>
+    </div>
+  </div>
+
+</div>

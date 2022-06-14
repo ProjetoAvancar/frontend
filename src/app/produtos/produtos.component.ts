@@ -17,6 +17,7 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit(){
     this.getAllProdutos()
+    window.scroll(0,0)
   }
 
   getAllProdutos(){

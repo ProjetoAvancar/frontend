@@ -1,18 +1,34 @@
+import { ActivationStart, NavigationStart, Router } from '@angular/router';
 import { AuthService } from './service/auth.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+export class AppComponent implements OnInit {
 
-
-
-export class AppComponent {
+  isShowHeader: boolean = false;
 
   constructor(
-    public auth: AuthService
-  ){}
+    public auth: AuthService,
+    private router: Router
+  ){
+  }
 
+  ngOnInit() {
+    this.observeRouterEvents();
+  }
+
+  observeRouterEvents(){
+    this.router.events.subscribe(data => this.onRoutingChange(data));
+  }
+
+  onRoutingChange(data: any){
+    if (data instanceof ActivationStart && data.snapshot.data){
+      const dataRoute = data.snapshot.data;
+      this.isShowHeader = dataRoute['isHeader'] || false;
+    }
+  }
 }
