@@ -1,3 +1,4 @@
+import { EditarUsuarioComponent } from './edit/editar-usuario/editar-usuario.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaComponent } from './categoria/categoria.component';
@@ -24,6 +25,8 @@ const routes: Routes = [
   { path:'delete-categoria/:id', component: CategoriaDeleteComponent, data: {isHeader: true} },
 
   { path:'cadastrar-produto', component: CadastrarProdutoComponent, data: {isHeader: true} },
+
+  { path:'editar-usario/:id', component: EditarUsuarioComponent, data: {isHeader: true} },
 
   {path: 'produto-edit/:id', component: ProdutoEditComponent, data: {isHeader: true}}, /*rota pra editar produto*/
   {path: 'produto-delete/:id', component: ProdutoDeleteComponent, data: {isHeader: true}} /*rota pra deletar produto*/

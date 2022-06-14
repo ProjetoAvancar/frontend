@@ -22,6 +22,7 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
 import { TelaProdutoComponent } from './tela-produto/tela-produto.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { EditarUsuarioComponent } from './edit/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,8 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     TelaProdutoComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
+    FooterComponent,
+    EditarUsuarioComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [

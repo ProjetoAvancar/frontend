@@ -11,7 +11,7 @@ import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit, AfterContentChecked {
 
   @Input() isHeader: boolean;
-  id = environment.id;
+  idUser = environment.id;
   nome = environment.nome
   tipo = environment.tipo
   // tipoUser = localStorage.getItem('tipo')
@@ -32,6 +32,7 @@ export class MenuComponent implements OnInit, AfterContentChecked {
     // this.nomeUser = localStorage.getItem('nome')
     this.nome = environment.nome
     this.tipo = environment.tipo
+    this.idUser = environment.id
   }
 
   sair() {
