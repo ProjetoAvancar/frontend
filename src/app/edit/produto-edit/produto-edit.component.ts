@@ -32,7 +32,7 @@ export class ProdutoEditComponent implements OnInit {
 
     if (environment.token == '' || environment.tipo != 'adm') {
       alert('Você não possui autorização!');
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/home']);
     }
 
     let id = this.route.snapshot.params['id']

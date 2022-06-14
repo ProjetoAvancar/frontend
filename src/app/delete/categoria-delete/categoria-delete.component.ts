@@ -22,7 +22,7 @@ export class CategoriaDeleteComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
       alert('Você não possui autorização!');
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/home']);
     } else {
       this.idCategoria = this.route.snapshot.params['id'];
       this.findCategoriaById(this.idCategoria);

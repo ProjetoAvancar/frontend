@@ -27,7 +27,7 @@ export class CadastrarProdutoComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
       alert('Você não possui autorização!');
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/home']);
     }
     this.findAllProdutos();
     this.findAllCategorias();

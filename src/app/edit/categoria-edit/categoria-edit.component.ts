@@ -21,7 +21,7 @@ export class CategoriaEditComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
       alert('Você não possui autorização!');
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/home']);
     } else {
       let id = this.route.snapshot.params['id'];
       this.findCategoriaById(id);
