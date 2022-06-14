@@ -26,6 +26,10 @@ export class LoginComponent implements OnInit {
         environment.token = this.userLogin.token;
         environment.nome = this.userLogin.nome;
         environment.id = this.userLogin.id;
+        environment.tipo = this.userLogin.tipo;
+
+        // localStorage.setItem('nome', this.userLogin.nome)
+        // localStorage.setItem('tipo', this.userLogin.tipo)
 
         this.router.navigate(['/home']);
       },

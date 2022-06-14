@@ -1,6 +1,5 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
-<app-carousel></app-carousel>
-<app-cards></app-cards>
+<app-menu [isHeader]="isShowHeader"></app-menu>
 
-<app-footer></app-footer>
+<router-outlet></router-outlet>
+
+<app-footer [isHeader]="isShowHeader"></app-footer>
