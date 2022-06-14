@@ -19,7 +19,7 @@
             </div>
 
             <div class="col md-3 d-flex justify-content-end">
-              <h6 class="justify-content-end mr-2">R$ {{item.valor}}</h6>
+              <h6 class="justify-content-end mr-2">{{item.valor | currency : 'BRL'}}</h6>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
         <h5 class="card-header">Resumo do pedido</h5>
 
         <div class="card-body">
-          <h5 class="text-center">Total: {{soma}}</h5>
+          <h5 class="text-center">Total: {{soma | currency : 'BRL'}}</h5>
           <hr>
         </div>
 
