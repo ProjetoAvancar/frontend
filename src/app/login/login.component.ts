@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         // localStorage.setItem('nome', this.userLogin.nome)
         // localStorage.setItem('tipo', this.userLogin.tipo)
 
-        this.router.navigate(['/produtos']);
+        this.router.navigate(['/home']);
       },
       error: (erro) => {
         if (erro.status == 401) {
