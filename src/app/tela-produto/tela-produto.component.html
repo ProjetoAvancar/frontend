@@ -1,82 +1,93 @@
 <body>
-    <div class="container-fluid col-md-12 mt-5 d-flex align-items-center" with="100%" height="100%" id="img-bg">
+  <div class="container-fluid col-md-12 mt-5 d-flex align-items-center"
+    with="100%" height="100%" id="img-bg">
 
-        <div class="row mt-5">
+    <div class="row mt-5">
 
-            <div class="col-md-8 mt-10 mt-5">
-                <div class="row d-flex mr-10 ml-10">
-                    <div class="card text-center" with="185px" height="350px">
+      <div class="col-md-8 mt-10 mt-5">
+        <div class="row d-flex mr-10 ml-10">
+          <div class="card text-center" with="185px" height="350px">
 
-                        <div class="card-body">
-                            <h5 class="card-title text-center mt-5">{{produto.nome}}</h5>
+            <div class="card-body">
+              <h5 class="card-title text-center mt-5">{{produto.nome}}</h5>
 
-                            <img src="{{produto.foto}}" class="text-center" with="185px" height="350px" alt="">
-                            
-                            <div><img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt=""></div>
-                            
-                            <p class="justify">{{produto.descricao}}</p>
-                        </div>
-                    </div>
-                </div>
+              <img src="{{produto.foto}}" class="text-center" with="185px"
+                height="350px" alt="">
 
+              <div><img class="imgStar" src="https://i.imgur.com/lqQP21r.png"
+                  alt=""></div>
+
+              <p class="justify">{{produto.descricao}}</p>
             </div>
-            <!--lado direito abaixo-->
-            <div class="col-md-4 mt-5">
-
-                <div class="row d-flex mr-10">
-                    <div class=" text-center">
-
-                        <div class="card text-center">
-
-                            <div class="card-body">
-                                <div>
-                                    <h4 class="text-center mt-5" id="colorRed"><s>{{produto.desconto | currency :
-                                            'BRL'}}</s></h4>
-                                    <h5 class="text-center" id="fontmax"><b>{{produto.valor | currency : 'BRL'}}</b>
-                                    </h5>
-
-                                    <div>
-                                        <img src="https://cdn-icons.flaticon.com/png/512/5645/premium/5645197.png?token=exp=1654801346~hmac=23b14d12771a730287d60d0f447d88b1"
-                                            with="25px" height="25px" alt="">
-                                        <label class="ml-3">⠀à vista no cartão de crédito</label>
-                                    </div>
-                                    <p>{{produto.desconto + 129 | currency : 'BRL'}} em até 8x no cartão</p>
-
-
-                                </div>
-
-                                <div class="card-body">
-                                    <img src="https://cdn-icons.flaticon.com/png/512/5611/premium/5611951.png?token=exp=1654797421~hmac=f142bc899fa424153e57d84cb844fcf0"
-                                        with="25px" height="25px" alt="">
-                                    <label for="nome"><b>Informe seu endereço:</b> </label>
-                                </div>
-                                <input type="text"><br>
-                                <p class="fontmini">Comprando agora receba em até 5 dias úteis</p>
-
-                                <div>
-                                    <button class="btn btn mt-5 mb-5 colorWhite" id="button"> <img
-                                            src="https://i.imgur.com/Bbk1cjw.png" with="25px" height="25px"
-                                            alt="ícone de carrinho de compras"> <b>⠀COMPRAR</b></button>
-                                    <p>
-                                        <a href="">Voltar para página inicial</a>
-                                    </p>
-                                    <br>
-                                    <small class="mt-5 fontmini">Esse produto é vendido e entregue por <b>Avançar</b>.
-                                        Todo valor arrecadado com as compras é revertido para ONG's
-                                        parceiras.</small>
-
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
+      </div>
+      <!--lado direito abaixo-->
+      <div class="col-md-4 mt-5">
+
+        <div class="row d-flex mr-10">
+          <div class=" text-center">
+
+            <div class="card text-center">
+
+              <div class="card-body">
+                <div>
+                  <h4 class="text-center mt-5" id="colorRed">
+                    <s>{{produto.desconto | currency :
+                      'BRL'}}</s></h4>
+                  <h5 class="text-center" id="fontmax"><b>{{produto.valor |
+                      currency : 'BRL'}}</b>
+                  </h5>
+
+                  <div>
+                    <img
+                      src="https://cdn-icons.flaticon.com/png/512/5645/premium/5645197.png?token=exp=1654801346~hmac=23b14d12771a730287d60d0f447d88b1"
+                      with="25px" height="25px" alt="">
+                    <label class="ml-3">⠀à vista no cartão de crédito</label>
+                  </div>
+                  <p>{{produto.desconto + 129 | currency : 'BRL'}} em até 8x no
+                    cartão</p>
+
+
+                </div>
+
+                <div class="card-body">
+                  <img
+                    src="https://cdn-icons.flaticon.com/png/512/5611/premium/5611951.png?token=exp=1654797421~hmac=f142bc899fa424153e57d84cb844fcf0"
+                    with="25px" height="25px" alt="">
+                  <label for="nome"><b>Informe seu endereço:</b> </label>
+                </div>
+                <input type="text"><br>
+                <p class="fontmini">Comprando agora receba em até 5 dias úteis
+                </p>
+
+                <div>
+                  <button (click)="adicionarAoCarrinho(produto.id)" class="btn btn mt-5 mb-5 colorWhite" id="button"> <img
+                      src="https://i.imgur.com/Bbk1cjw.png" with="25px"
+                      height="25px" alt="ícone de carrinho de compras">
+                    <b>⠀COMPRAR</b></button>
+                  <p>
+                    <a routerLink="/home" >Voltar para página inicial</a>
+                  </p>
+                  <br>
+                  <small class="mt-5 fontmini">Esse produto é vendido e entregue
+                    por <b>Avançar</b>.
+                    Todo valor arrecadado com as compras é revertido para ONG's
+                    parceiras.</small>
+
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+
+  </div>
 </body>

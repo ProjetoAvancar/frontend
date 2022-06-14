@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produto } from '../model/Produto';
@@ -9,6 +10,7 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./tela-produto.component.css']
 })
 export class TelaProdutoComponent implements OnInit {
+  carrinho = environment.carrinho
 
   produto: Produto
   constructor(
@@ -21,11 +23,16 @@ export class TelaProdutoComponent implements OnInit {
     this.findProdutoById(id)
     console.log(this.findProdutoById(id))
   }
-  
+
   findProdutoById(id: number){
   this.produtoService.getProdutoById(id).subscribe((resp: Produto)=>{
       this.produto = resp
      })
    }
+
+   adicionarAoCarrinho(id: number) {
+    this.carrinho.push(id)
+    alert("Produto adicionado ao carrinho!")
+  }
 
 }

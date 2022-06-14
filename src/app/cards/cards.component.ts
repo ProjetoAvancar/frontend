@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
 
@@ -8,6 +9,7 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
+  carrinho = environment.carrinho
 
   listaProdutos: Produto[]
   constructor(
@@ -23,4 +25,11 @@ export class CardsComponent implements OnInit {
       this.listaProdutos = resp
     })
   }
+
+  adicionarAoCarrinho(id: number) {
+    console.log(id)
+    this.carrinho.push(id)
+    console.log(this.carrinho)
+  }
+
 }

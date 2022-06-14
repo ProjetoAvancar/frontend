@@ -1,3 +1,4 @@
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { EditarUsuarioComponent } from './edit/editar-usuario/editar-usuario.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
@@ -33,7 +34,9 @@ const routes: Routes = [
   { path:'editar-usario/:id', component: EditarUsuarioComponent, data: {isHeader: true} },
 
   {path: 'produto-edit/:id', component: ProdutoEditComponent, data: {isHeader: true}}, /*rota pra editar produto*/
-  {path: 'produto-delete/:id', component: ProdutoDeleteComponent, data: {isHeader: true}} /*rota pra deletar produto*/
+  {path: 'produto-delete/:id', component: ProdutoDeleteComponent, data: {isHeader: true}}, /*rota pra deletar produto*/
+
+  { path:'carrinho', component: CarrinhoComponent, data: {isHeader: true} }
 ];
 
 @NgModule({

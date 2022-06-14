@@ -27,6 +27,7 @@ import { EditarUsuarioComponent } from './edit/editar-usuario/editar-usuario.com
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 
 registerLocaleData(ptBr);
@@ -52,7 +53,8 @@ registerLocaleData(ptBr);
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     FooterComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    CarrinhoComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   // providers: [
