@@ -2,6 +2,7 @@ import { AuthService } from '../../service/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../model/User';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -20,6 +21,10 @@ export class EditarUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (environment.token == '') {
+      alert('Você precisa estar logado!');
+      this.router.navigate(['/home']);
+    }
     this.idUsuario = this.route.snapshot.params['id']
     this.findUserById()
   }
@@ -35,7 +40,7 @@ export class EditarUsuarioComponent implements OnInit {
     this.authService.putUsuario(this.usuario).subscribe((resp: User)=>{
       this.usuario = resp
       alert('Usuário atualizado com sucesso!')
-      this.router.navigate(['/produtos'])
+      this.router.navigate(['/home'])
     })
   }
 
