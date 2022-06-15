@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CategoriaService } from './../../service/categoria.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria-delete',
@@ -21,7 +22,11 @@ export class CategoriaDeleteComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
-      alert('Você não possui autorização!');
+      Swal.fire({
+        title: 'Você não possui autorização!',
+        icon: 'error'
+    })
+      //alert('Você não possui autorização!');
       this.router.navigate(['/home']);
     } else {
       this.idCategoria = this.route.snapshot.params['id'];
@@ -37,7 +42,11 @@ export class CategoriaDeleteComponent implements OnInit {
 
   deletar() {
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
-      alert('Categoria apagada!')
+      Swal.fire({
+        title: 'Categoria apagada com sucesso!',
+        icon: 'success'
+    })
+      //alert('Categoria apagada!')
       this.router.navigate(['/categoria'])
     })
   }

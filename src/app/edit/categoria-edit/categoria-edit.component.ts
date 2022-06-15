@@ -3,6 +3,7 @@ import { CategoriaService } from './../../service/categoria.service';
 import { Categoria } from './../../model/Categoria';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-categoria-edit',
@@ -20,7 +21,11 @@ export class CategoriaEditComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
-      alert('Você não possui autorização!');
+      Swal.fire({
+        title: 'Você não possui autorização!',
+        icon: 'error'
+    })
+      //alert('Você não possui autorização!');
       this.router.navigate(['/home']);
     } else {
       let id = this.route.snapshot.params['id'];
@@ -39,7 +44,11 @@ export class CategoriaEditComponent implements OnInit {
       .putCategoria(this.categoria)
       .subscribe((resp: Categoria) => {
         this.categoria = resp;
-        alert('Categoria atualizada!');
+        Swal.fire({
+          title: 'Categoria atualizada com sucesso!',
+          icon: 'success'
+      })
+        //alert('Categoria atualizada!');
         this.router.navigate(['/categoria']);
       });
   }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tela-produto',
@@ -32,7 +33,14 @@ export class TelaProdutoComponent implements OnInit {
 
    adicionarAoCarrinho(id: number) {
     this.carrinho.push(id)
-    alert("Produto adicionado ao carrinho!")
+    Swal.fire({
+      title: 'Produto adicionado ao carrinho!',
+      icon: 'success'
+      //,
+      //confirmButtonText: 'Cool',
+      //confirmButtonColor: ''
+  })
+    //alert("Produto adicionado ao carrinho!")
   }
 
 }

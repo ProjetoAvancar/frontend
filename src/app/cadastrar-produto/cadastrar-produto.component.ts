@@ -5,6 +5,7 @@ import { Produto } from '../model/Produto';
 import { ProdutoService } from './../service/produto.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -26,7 +27,11 @@ export class CadastrarProdutoComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '' || environment.tipo != 'adm') {
-      alert('Você não possui autorização!');
+      Swal.fire({
+        title: 'Você não possui autorização!',
+        icon: 'error'
+    })
+      //alert('Você não possui autorização!');
       this.router.navigate(['/home']);
     }
     this.findAllProdutos();
@@ -61,7 +66,11 @@ export class CadastrarProdutoComponent implements OnInit {
     console.log(this.produto);
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
-      alert('Produto cadastrado');
+      Swal.fire({
+        title: 'Produto cadastrado com sucesso!',
+        icon: 'success'
+    })
+      //alert('Produto cadastrado');
       this.findAllProdutos();
       this.produto = new Produto();
     });

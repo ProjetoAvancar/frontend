@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/model/Produto';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-produto-edit',
@@ -31,7 +32,11 @@ export class ProdutoEditComponent implements OnInit {
     window.scroll(0,0)
 
     if (environment.token == '' || environment.tipo != 'adm') {
-      alert('Você não possui autorização!');
+      Swal.fire({
+        title: 'Você não possui autorização!',
+        icon: 'error'
+    })
+      //alert('Você não possui autorização!');
       this.router.navigate(['/home']);
     }
 
@@ -65,7 +70,11 @@ export class ProdutoEditComponent implements OnInit {
 
       this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Produto atualizado com sucesso!')
+      Swal.fire({
+        title: 'Produto atualizado com sucesso!',
+        icon: 'success'
+    })
+      //alert('Produto atualizado com sucesso!')
       this.router.navigate(['/cadastrar-produto'])
       })
     }

@@ -3,6 +3,7 @@ import { ProdutoService } from './../service/produto.service';
 import { Produto } from './../model/Produto';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-carrinho',
@@ -43,15 +44,33 @@ export class CarrinhoComponent implements OnInit {
 
   finalizarCompra() {
     if(environment.token == '') {
-      alert('Você precisa estar logado!')
+      Swal.fire({
+        title: 'Você precisa estar logado!',
+        icon: 'warning'        
+      }
+      )
       this.router.navigate(['/login'])
+      // alert('Você precisa estar logado!')
+      
     } else if(this.listaProdutos.length > 0) {
-      alert('Muito obrigado pela compra!')
+      Swal.fire({
+        title: 'Muito obrigado pela compra!',
+        icon: 'success'
+        //,
+        //confirmButtonText: 'Cool',
+        //confirmButtonColor: ''
+    })
+      // alert('Muito obrigado pela compra!')
       this.listaProdutos = []
       environment.carrinho = [0]
       this.router.navigate(['/home'])
     } else {
-      alert('Seu carrinho está vazio!')
+      Swal.fire({
+        title: 'Seu carrinho está vazio!',
+        icon: 'warning'        
+      }
+      )
+      //alert('Seu carrinho está vazio!')
     }
   }
 
