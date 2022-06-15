@@ -16,27 +16,27 @@ export class ProdutoService {
   };
 
   getAllProdutos(): Observable<Produto[]>{
-    return this.http.get<Produto[]>('http://localhost:8080/produtos')
+    return this.http.get<Produto[]>('https://projetoavancar.herokuapp.com/produtos')
   }
 
   getProdutoById(id: number): Observable<Produto> {
-    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`)
+    return this.http.get<Produto>(`https://projetoavancar.herokuapp.com/produtos/${id}`)
   }
 
   getProdutosByNome(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`http://localhost:8080/produtos/nome/${nome}`)
+    return this.http.get<Produto[]>(`https://projetoavancar.herokuapp.com/produtos/nome/${nome}`)
   }
 
   postProduto(produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>('http://localhost:8080/produtos/cadastrar', produto, this.token)
+    return this.http.post<Produto>('https://projetoavancar.herokuapp.com/produtos/cadastrar', produto, this.token)
   }
 
   putProduto(produto: Produto): Observable<Produto> {
-    return this.http.put<Produto>('http://localhost:8080/produtos/atualizar', produto, this.token)
+    return this.http.put<Produto>('https://projetoavancar.herokuapp.com/produtos/atualizar', produto, this.token)
   }
 
   deleteProduto(id: number){
-  return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token)
+  return this.http.delete(`https://projetoavancar.herokuapp.com/produtos/${id}`, this.token)
   }
 
 }

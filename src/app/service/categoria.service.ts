@@ -14,26 +14,26 @@ export class CategoriaService {
 
   /*metodo para trazer uma lista de categorias */
   getAllCategorias(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias')
+    return this.http.get<Categoria[]>('https://projetoavancar.herokuapp.com/categorias')
   }
 
   getByIdCategorias(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`http://localhost:8080/categorias/${id}`,)
+    return this.http.get<Categoria>(`https://projetoavancar.herokuapp.com/categorias/${id}`,)
   }
 
   getNomeCategorias(nome: string ): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>(`http://localhost:8080/categorias/titulo/${nome}`)
+    return this.http.get<Categoria[]>(`https://projetoavancar.herokuapp.com/categorias/titulo/${nome}`)
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categorias/cadastrar', categoria)
+    return this.http.post<Categoria>('https://projetoavancar.herokuapp.com/categorias/cadastrar', categoria)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('http://localhost:8080/categorias/atualizar', categoria)
+    return this.http.put<Categoria>('https://projetoavancar.herokuapp.com/categorias/atualizar', categoria)
   }
 
   deleteCategoria(id: number){
-    return this.http.delete(`http://localhost:8080/categorias/${id}`)
+    return this.http.delete(`https://projetoavancar.herokuapp.com/categorias/${id}`)
   }
 }
