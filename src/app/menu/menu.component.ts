@@ -46,5 +46,7 @@ export class MenuComponent implements OnInit, AfterContentChecked {
 
     this.router.navigate(['/produtos'])
   }
-
+  carrinho() {
+    this.router.navigate(['/carrinho'])
+  }
 }
