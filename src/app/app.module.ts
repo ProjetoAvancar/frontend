@@ -28,6 +28,8 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { SobreComponent } from './sobre/sobre.component';
+import { BotaoComponent } from './botao/botao.component';
 
 
 registerLocaleData(ptBr);
@@ -54,7 +56,9 @@ registerLocaleData(ptBr);
     ProdutoDeleteComponent,
     FooterComponent,
     EditarUsuarioComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    SobreComponent,
+    BotaoComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   // providers: [
