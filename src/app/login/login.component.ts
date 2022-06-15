@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,11 @@ export class LoginComponent implements OnInit {
       },
       error: (erro) => {
         if (erro.status == 401) {
-          alert('Usuário ou senha estão incorretos');
+          Swal.fire({
+            title: 'Credenciais inválidas!',
+            icon: 'error'
+        })
+          //alert('Usuário ou senha estão incorretos');
         }
       },
     });
