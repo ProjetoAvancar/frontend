@@ -4,110 +4,34 @@
       <div class="row py-5 ">
         <div class="col-lg-5 m-auto text-center">
           <h1>Produtos mais vendidos</h1>
-
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 text-center">
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-header">
-            <p class="mt-3 card-title text-light">MEGA OFERTA</p>
-          </div>
 
-          <div class="card-body">
-            <a routerlink="/produto"><img class="img-card img-fluid" src="https://i.imgur.com/8IigVIF.png" alt="not found"></a>
-          </div>
+      <div class="col-lg-3 text-center" *ngFor="let item of listaProdutos">
+        <div class="card border-0 bg-light mb-2" *ngIf="item.categoria.id == 6">
+          <a [routerLink]="['/tela-produto', item.id]" class="btn p-0" id="teste">
+            <div class="card-header">
+              <p class="mt-3 card-title text-light">MEGA OFERTA</p>
+            </div>
 
-          <div class="card-footer">
-            <h6>Smart TV 55" UHD Samsung 4k 55AU7700 Processador Crystal 4k</h6>
-            <img class="imgStar" src="https://i.imgur.com/8678pqM.png" alt="">
-            <s><p>R$3.499,99</p></s>
-            <p class="textPrice">R$2.999,99</p>
-            <form class="d-block">
-              <button class="btn btn-primary">Adicionar ao Carrinho</button>
-            </form>
-          </div>
+            <div class="card-body">
+              <a routerlink="/produto"><img class="img-card img-fluid" src="{{item.foto}}" alt="not found"></a>
+            </div>
+
+            <div class="card-footer">
+              <h6>{{item.nome}}</h6>
+              <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+              <s>
+                <p>{{item.desconto | currency : 'BRL'}}</p>
+              </s>
+              <p class="textPrice">{{item.valor | currency : 'BRL'}}</p>
+            </div>
+          </a>
         </div>
       </div>
-
-      <div class="col-lg-3 text-center">
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-header">
-            <p class="mt-3 card-title text-light">MEGA OFERTA</p>
-          </div>
-
-          <div class="card-body">
-            <a routerlink="/produto"><img class="img-card img-fluid img-card" src="https://i.imgur.com/ihf9a5b.png" alt="not found"></a>
-          </div>
-
-          <div class="card-footer">
-            <h6>Notebook Ideapad Gaming 3i Intel Core i5-10300H 8GB </h6>
-            <img clas="imgStar" src="https://i.imgur.com/8678pqM.png" alt="">
-            <s><p>R$5.975,89</p></s>
-            <p class="textPrice">R$4.658,42</p>
-            <form class="d-block">
-              <button class="btn btn-primary">Adicionar ao Carrinho</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 text-center">
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-header">
-            <p class="mt-3 card-title text-light">MEGA OFERTA</p>
-          </div>
-
-          <div class="card-body">
-            <a routerlink="/produto"><img class="img-card img-fluid" src="https://i.imgur.com/6PpR9IV.png" alt="not found"></a>
-          </div>
-
-          <div class="card-footer">
-            <h6>Cooktop 5 Bocas Itatiaia 3700000018 à Gás - Elétrico Acendimento Automático</h6>
-            <img class="imgStar1" src="https://i.imgur.com/ET20MXc.png" alt="">
-            <s><p>R$499,95</p></s>
-            <p class="textPrice">R$359,99</p>
-            <form class="d-block">
-              <button class="btn btn-primary">Adicionar ao Carrinho</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 text-center">
-        <div class="card border-0 bg-light mb-2">
-          <div class="card-header">
-            <p class="mt-3 card-title text-light">MEGA OFERTA</p>
-          </div>
-
-          <div class="card-body">
-            <a routerlink="/produto"><img class="img-card img-fluid" src="https://i.imgur.com/uSIu8qg.png" alt="not found"></a>
-          </div>
-
-          <div class="card-footer">
-            <h6>Frigobar Midea Compact 71 Litros Black Edition</h6>
-            <img class="imgStar1" src="https://i.imgur.com/ET20MXc.png" alt="">
-            <s><p>R$949,85</p></s>
-            <p class="textPrice">R$835,12</p>
-            <form class="d-block">
-              <button class="btn btn-primary">Adicionar ao Carrinho</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- <button class="btnControl btn carousel-control-prev" type="button">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden"></span>
-      </button>
-      <button class="btnControl btn carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden"></span>
-      </button> -->
-      
     </div>
-
   </section>
 
 </main>

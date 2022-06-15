@@ -1,64 +1,49 @@
-<app-menu></app-menu>
-<div class="bg-all-container">
-    <div class="full-container-1">
-        <div id="bg-full-container" class="bg-container bg-color">
-            <div id="container-a" class="a-row mb-important fdir widget-hc">
-                <div id="item-carrinho" class="fdir card-container container-um con-details">
-                    <div id="item-image" class="secao text-center">
-                        <a routerlink="/produto"><img class="img-card img-fluid" src="https://i.imgur.com/8IigVIF.png"
-                                alt="not found" height="200px" width="270px"></a>
-                        <h2 class="">R$: 3.499,99</h2>
-                    </div>
-                    <div id="item-name" class="col-sm name-item">
-                        <h4>Smart TV 55" UHD Samsung 4k 55AU7700 Processador Crystal 4k</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="bg-full-container" class="bg-container bg-color">
-            <div id="container-a" class="a-row mb-important fdir widget-hc">
-                <div id="item-carrinho" class="fdir card-container container-um con-details">
-                    <div id="item-image" class="secao text-center">
-                        <a routerlink="/produto"><img class="img-card img-fluid img-card"
-                                src="https://i.imgur.com/ihf9a5b.png" alt="not found" height="200px" width="270px"></a>
-                        <h2 class="">R$: 5.975,89</h2>
-                    </div>
-                    <div id="item-name" class="col-sm name-item">
-                        <h4>Notebook Ideapad Gaming 3i Intel Core i5-10300H 8GB</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="bg-full-container" class="bg-container bg-color">
-            <div id="container-a" class="a-row mb-important fdir widget-hc">
-                <div id="item-carrinho" class="fdir card-container container-um con-details">
-                    <div id="item-image" class="secao text-center">
-                        <a routerlink="/produto"><img class="img-card img-fluid" src="https://i.imgur.com/6PpR9IV.png"
-                                alt="not found" height="200px" width="270px"></a>
-                        <h2 class="">R$: 499,95</h2>
-                    </div>
-                    <div id="item-name" class="col-sm name-item">
-                        <h4>Cooktop 5 Bocas Itatiaia 3700000018 à Gás - Elétrico Acendimento Automático</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="bg-full-container" class="bg-container bg-color">
-            <div id="container-a" class="a-row mb-important fdir widget-hc">
-                <div id="item-carrinho" class="fdir card-container container-um con-details">
-                    <div class="right"></div>
-                    <div id="item-name" class="col name-item">
-                        <h4>Total de itens selecionados:³</h4>
-                    </div>
+<div class="container mt-5">
 
-                    <div id="itens-total" class="col-lg-4 d-flex justify-content-around card-container preco">
-                        <h4 class="fdir container-um con-details name-item">R$: 9975.83</h4>
-                        <button class="preco btn btn-primary "><img src="../../assets/img/shoppcart.png" alt="carrinho"
-                                height="70px" width="70px">Comprar</button>
-                    </div>
-                </div>
+  <div class="row">
+
+    <div class="col-md-8">
+      <div class="card">
+        <h5 class="card-header">Carrinho</h5>
+
+        <div class="card-body d-flex align-items-center" *ngFor="let item of listaProdutos">
+          <div class="row align-items-center">
+
+            <div class="col-md-3 mr-5">
+              <img class="img-fluid tm-max" src="{{item.foto}}"
+              alt="Imagem do produto">
             </div>
+
+            <div class="col-md-5 mr-5">
+              <h6 class="text-secondary mr-5">{{item.nome}}</h6>
+            </div>
+
+            <div class="col md-3 d-flex justify-content-end">
+              <h6 class="justify-content-end mr-2">{{item.valor | currency : 'BRL'}}</h6>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <div class="col-md-4">
+
+      <div class="card">
+        <h5 class="card-header">Resumo do pedido</h5>
+
+        <div class="card-body">
+          <h5 class="text-center">Total: {{soma | currency : 'BRL'}}</h5>
+          <hr>
+        </div>
+
+        <div class="d-flex justify-content-center mb-2">
+          <button (click)="finalizarCompra()" type="button" class="btn btn-primary">Finalizar Compra</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
-<app-footer></app-footer>

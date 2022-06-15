@@ -1,0 +1,104 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row  justify-content-center">
+    <div class="col-md-6">
+
+      <ul class="nav  nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link  active" id="home-tab" data-toggle="tab" role="tab"
+            aria-controls="home" aria-selected="true"><b>Cadastrar
+              produtos</b></a>
+        </li>
+      </ul>
+
+      <div class="card  " id="center">
+        <div class="form-group  col-md-6 mt-4 ">
+          <!--campo  nome  do  produto-->
+          <div class="mt-3">
+            <label for="">Nome do produto</label>
+            <input class="form-control" type="text" name="nome" id="nome"
+              placeholder="Digite  o  nome  do  produto" [(ngModel)]="produto.nome">
+          </div>
+          <!--campo  foto-->
+          <div class="mt-3">
+            <label for="">Foto</label>
+            <input class="form-control" type="text" name="foto" id="foto"
+              placeholder="Insira  o  link  da  foto do  produto" [(ngModel)]="produto.foto">
+          </div>
+          <!--campo  preço-->
+          <div class="mt-3">
+            <label for="">Valor</label>
+            <input class="form-control" type="valor" name="Valor" id="valor"
+              placeholder="Informe  o  preço  do  produto" [(ngModel)]="produto.valor">
+          </div>
+          <!--caixa  descrição-->
+          <div class="mt-3">
+            <label for="texto">Descrição do produto</label>
+            <textarea class="form-control" name="texto" id="texto"
+              placeholder="Descreva o  produto" [(ngModel)]="produto.descricao"></textarea>
+          </div>
+          <!--select  de  categorias-->
+          <div class="mt-3">
+            <label for="texto">Categoria</label>
+            <select name="categoria" id="categoria" class="form-control"
+              [(ngModel)]="idCategoria" (change)="findCategoriaById()">
+              <option *ngFor="let item of listaCategoria" value="{{item.id}}">
+                {{item.nome}}
+              </option>
+            </select>
+          </div>
+          <!--botões-->
+          <div class="mt-5  text-center  mb-4">
+            <button class="btn  btn-danger  mr-4"
+              routerLink='/home'>Cancelar</button>
+            <button class="btn  btn-info"
+              (click)="cadastrar()">Confirmar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane  fade  show  active" id="home" role="tabpanel"
+          aria-labelledby="home-tab"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="text-center">Produtos Cadastrados</h2>
+    </div>
+  </div>
+
+
+  <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-6">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col" class="text-right">Modificações</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let produto of listaProdutos">
+            <th>{{produto.id}}</th>
+            <td>{{produto.nome}}</td>
+            <td class="d-flex  justify-content-end">
+              <a href="" [routerLink]="['/produto-edit', produto.id]"><i class="fa  fa-pencil-square  text-dark" aria-hidden="true"></i></a>
+              <a [routerLink]="['/produto-delete', produto.id]" class="ml-4"><i class="fa  fa-trash  text-dark" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
