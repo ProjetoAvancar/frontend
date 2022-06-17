@@ -12,7 +12,7 @@ export class ProdutosComponent implements OnInit {
   listaProdutos: Produto[]
   constructor(
     private produtoService: ProdutoService
-    
+
   ) { }
 
   ngOnInit(){

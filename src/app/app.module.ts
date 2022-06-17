@@ -61,16 +61,16 @@ registerLocaleData(ptBr);
     BotaoComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  // providers: [
-  //   {
-  //     provide: LocationStrategy,
-  //     useClass: HashLocationStrategy,
-  //   },
-  // ],
-  providers: [{
-    provide: LOCALE_ID, useValue: 'pt',
-    useClass: HashLocationStrategy
-  }],
+  providers: [
+    {
+    provide:  LOCALE_ID,
+    useValue: 'pt',
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
