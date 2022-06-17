@@ -12,7 +12,13 @@
 }
 
 .tm-busca {
-  width: 600px;
+  width: 550px;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .tm-busca {
+    width: 250px;
+  }
 }
 
 .tm-cart {
@@ -27,17 +33,4 @@
 
 .fs-14 {
   font-size: 14pt;
-}
-
-.inp-icon {
-  position: relative;
-}
-
-.inp-icon button {
-  position: absolute;
-  left: 535px;
-}
-
-input + span {
-  position: absolute;
 }
