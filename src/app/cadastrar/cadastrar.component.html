@@ -1,52 +1,60 @@
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1">
+                <nav class="navbar navbar-expand-lg navbar-light bg-nav-color">
+                    <a class="navbar-brand w-100 h-100" routerLink="/home"><img class="tm-logo"
+                            src="../../assets/img/logo.png" alt="Logo Avançar"></a>
+                </nav>
+            </div>
+            <div class="container-fluid" id="img-bg">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-12">
+                        <div class="row d-flex justify-content-center">
+                            <div class="card col-md-3 mt-5">
+                                <h1 class="text-center mb-3"> Cadastro</h1>
 
-  <div class="container-fluid" id="img-bg">
+                                <div class="form-group">
+                                    <label for="nome">Nome completo</label>
+                                    <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome"
+                                        id="nome" placeholder="Seu nome">
+                                </div>
 
-  <div class="row d-flex align-items-center">
-      <div class="col-md-12" >
+                                <!-- <div class="form-group">
+                                    <label for="CPF">CPF </label>
+                                    <input class="form-control" type="text" name="CPF" id="CPF" placeholder="Seu CPF">
+                                </div> -->
 
-          <div class="row d-flex justify-content-center">
-              <div class="card col-md-3 mt-5">
-                  <h1 class="text-center mb-3"> Cadastro</h1>
+                                <div class="form-group">
+                                    <label for="email">Seu e-mail </label>
+                                    <input [(ngModel)]="user.usuario" class="form-control" type="text" name="email"
+                                        id="foto" placeholder="Insira seu e-mail">
+                                </div>
 
-                  <div class="form-group">
-                      <label for="nome">Nome completo</label>
-                      <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
-                  </div>
+                                <div class="form-group">
+                                    <label for="senha">Senha </label>
+                                    <input (input)="confirmSenha($event)" class="form-control" type="password"
+                                        name="senha" id="senha" placeholder="Sua senha">
+                                </div>
 
-                  <!-- <div class="form-group">
-                      <label for="CPF">CPF </label>
-                      <input class="form-control" type="text" name="CPF" id="CPF" placeholder="Seu CPF">
-                  </div> -->
-
-                  <div class="form-group">
-                      <label for="email">Seu e-mail </label>
-                      <input [(ngModel)]="user.usuario" class="form-control" type="text" name="email" id="foto" placeholder="Insira seu e-mail">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="senha">Senha </label>
-                      <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="confirmSenha">Confirmar senha </label>
-                      <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-                          placeholder="Confirme sua senha">
-                  </div>
-                  <br>
-                  <div class="d-flex justify-content-center">
-                      <button type="submit" class="btn btn-danger mr-4" id="buttonRed" routerLink="/login">Cancelar</button>
-                      <button (click)="cadastrar()" type="submit" class="btn btn-success" id="button">Cadastrar</button>
-
-              </div>
-
-          </div>
-
-      </div> <!--fim do div do bg-->
-
-  </div>
-
-</div>
-</div>
+                                <div class="form-group">
+                                    <label for="confirmSenha">Confirmar senha </label>
+                                    <input [(ngModel)]="user.senha" class="form-control" type="password"
+                                        name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
+                                </div>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-danger mr-4" id="buttonRed"
+                                        routerLink="/login">Cancelar</button>
+                                    <button (click)="cadastrar()" type="submit" class="btn btn-success"
+                                        id="button">Cadastrar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fim do div do bg-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

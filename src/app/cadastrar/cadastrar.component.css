@@ -5,11 +5,10 @@
 }
 
 body {
-  background:linear-gradient(45deg, rgb(16, 133, 217),rgb(224, 228, 237)) ;
+  background:linear-gradient(to bottom right, rgb(16, 133, 217),rgb(224, 228, 237)) ;
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
 
 }
 
@@ -38,4 +37,9 @@ transition: all 0.3s ease;
 
 .color {
   color:blue
+}
+
+.tm-logo {
+  width: 193px;
+  height: 72px;
 }
