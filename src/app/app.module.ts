@@ -57,13 +57,13 @@ registerLocaleData(ptBr);
     CarrinhoComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  // providers: [
-  //   {
-  //     provide: LocationStrategy,
-  //     useClass: HashLocationStrategy,
-  //   },
-  // ],
-  providers: [{
+
+  providers: [
+  {
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  },  
+  {
     provide: LOCALE_ID, useValue: 'pt',
     useClass: HashLocationStrategy
   }],
