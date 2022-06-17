@@ -53,13 +53,14 @@ export class CarrinhoComponent implements OnInit {
       // alert('Você precisa estar logado!')
       
     } else if(this.listaProdutos.length > 0) {
-      Swal.fire({
-        title: 'Muito obrigado pela compra!',
-        icon: 'success'
+      Swal.fire(
+        'Muito obrigado pela compra!',
+        'Você acabou de nos ajudar a avançar a <b> erradicação da pobreza</b> no mundo!',
+        'success'
         //,
         //confirmButtonText: 'Cool',
         //confirmButtonColor: ''
-    })
+    )
       // alert('Muito obrigado pela compra!')
       this.listaProdutos = []
       environment.carrinho = [0]
