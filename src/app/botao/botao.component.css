@@ -1,4 +1,4 @@
-.label-container{
+/* .label-container{
 	position:fixed;
   z-index:1;
 	bottom:48px;
@@ -59,4 +59,4 @@ a.float:hover + div.label-container{
 
 .float svg:hover{
   color: rgba(0,0,0,0.5);
-}
+} */
